@@ -1,2 +1,2 @@
 # BasicKneeSimulation
-Two joints about a revolute joint with IMUs attached.
+Two link blocks about a revolute joint with IMUs attached.
