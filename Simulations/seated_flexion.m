@@ -8,3 +8,6 @@ kneeActuatorSineAmplitude = getEntry(dataSection, 'KneeActuatorSineAmplitude');
 setValue(kneeAngleStart, -90);
 setValue(hipAngleStart, 0);
 setValue(kneeActuatorSineAmplitude, 5);
+
+sim('LegWithSensors');
+save_sim_data('seated_flexion.mat');
