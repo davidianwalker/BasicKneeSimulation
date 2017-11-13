@@ -1,13 +1,15 @@
 dataDictionary = Simulink.data.dictionary.open('Data.sldd');
 dataSection = getSection(dataDictionary, 'Design Data');
 
-kneeAngleStart = getEntry(dataSection, 'KneeAngleStart_deg');
-hipAngleStart = getEntry(dataSection, 'HipAngleStart_deg');
+hipAngleStart = getEntry(dataSection, 'HipAngleStart_rad');
 kneeActuatorSineAmplitude = getEntry(dataSection, 'KneeActuatorSineAmplitude');
+kneeActuatorSineBias = getEntry(dataSection, 'KneeActuatorSineBias');
+kneeActuatorSineFreq = getEntry(dataSection, 'KneeActuatorSineFreq');
 
-setValue(kneeAngleStart, -90);
 setValue(hipAngleStart, 0);
-setValue(kneeActuatorSineAmplitude, 5);
+setValue(kneeActuatorSineAmplitude, pi/4);
+setValue(kneeActuatorSineBias, -pi/4);
+setValue(kneeActuatorSineFreq, 2);
 
 sim('LegWithSensors');
 save_sim_data('seated_flexion.mat');
